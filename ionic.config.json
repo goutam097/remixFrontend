@@ -1,0 +1,7 @@
+{
+  "name": "Remix",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
