@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'create-story-modal',
+    loadChildren: () => import('./pages/create-story-modal/create-story-modal.module').then( m => m.CreateStoryModalPageModule)
   },
+
 ];
 
 @NgModule({

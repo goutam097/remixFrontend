@@ -24,3 +24,37 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+
+ion-modal#emoji-modal {
+    --width: 500px;
+    --min-width: 250px;
+    --height: 450px;
+
+    --border-radius: 6px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 1);
+    .wrapper{
+        overflow-y: scroll;
+    }
+  }
+  
+  ion-modal#emoji-modal h1 {
+    margin: 20px 20px 10px 20px;
+  }
+  
+  ion-modal#emoji-modal ion-icon {
+    margin-right: 6px;
+  
+    width: 48px;
+    height: 48px;
+  
+    padding: 4px 0;
+  
+    color: #aaaaaa;
+  }
+  
+  ion-modal#emoji-modal .wrapper {
+    margin-bottom: 10px;
+  }

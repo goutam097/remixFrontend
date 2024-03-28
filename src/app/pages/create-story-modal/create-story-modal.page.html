@@ -1,0 +1,180 @@
+<div class="modal_header">
+  <h5 class="text-center">Create Story</h5>
+  <button class="close_btn" (click)="cancel()">
+    <ion-icon name="close-outline"></ion-icon> 
+  </button>
+</div>
+<ion-content class="ion-padding">
+  <div class="d-flex gap-2 mb-3">
+    <div class="story-box music-box">
+      <div class="icon-box">
+        <i class="fa-solid fa-music"></i>
+      </div>
+      Music
+    </div>
+    <div class="story-box text-box">
+      <div class="icon-box">
+        <i class="fa-solid fa-font"></i>
+      </div>
+      Text
+    </div>
+  </div>
+  <div class="">
+  <div class="row g-2">
+    <div class="col-md-3">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="" (click)="setOpen(true)">
+      <ion-modal [isOpen]="isModalOpen">
+        <ng-template>
+          <!-- <ion-header>
+            <ion-toolbar>              
+              <ion-buttons slot="end">
+                <ion-button (click)="setOpen(false)"><ion-icon name="close-outline"></ion-icon> </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header> -->
+          <div class="modal_header_inner">
+            <button class="close_btn" (click)="setOpen(false)">
+              <ion-icon name="close-outline"></ion-icon> 
+            </button>
+            
+          </div>
+          <div class="story-post">
+            <div class="activities d-flex flex-column gap-3">
+              
+
+              <ion-modal id="emoji-modal" #modal trigger="open-custom-dialog">
+                
+                <ng-template>
+                  <div class="wrapper p-4">
+                    <div class="row gy-4">
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-1.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-2.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-3.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-4.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-5.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-6.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-1.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-2.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-3.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-4.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-5.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-6.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-1.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-2.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-3.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-4.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-5.png" alt="">
+                      </div>
+                      <div class="col-3">
+                        <img src="../../../assets/images/emoji-6.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ion-modal>
+              <div class="activities-list" id="open-custom-dialog" expand="block">Sticker  <i class="fa-solid fa-face-smile"></i></div>
+              <div class="activities-list">Text  <i class="fa-solid fa-font"></i></div>
+              <div class="activities-list">Music  <i class="fa-solid fa-music"></i></div>
+            </div>
+            <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+          </div>
+        </ng-template>
+      </ion-modal>
+    </div>
+    <div class="col-md-3">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+    <div class="col-md-3">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+    <div class="col-md-3">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+    <div class="col-md-3">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+    <div class="col-md-3">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+    <div class="col-md-3">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+    <div class="col-md-3">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+  </div>
+</div>
+</ion-content>
+
+<!-- <ion-content [fullscreen]="true" >
+  <div class="modal_header">
+    <h5 class="text-center">Create Story</h5>
+    <button class="close_btn" (click)="cancel()">
+      <ion-icon name="close-outline"></ion-icon> 
+    </button>
+  </div>
+  <div class="row g-2">
+    <div class="col-md-4">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+    <div class="col-md-4">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+    <div class="col-md-4">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+    <div class="col-md-4">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+    <div class="col-md-4">
+      <img src="../../../assets/images/beautiful-young-woman-coat-with-bag-posing.jpg" alt="">
+    </div>
+  </div>
+</ion-content> -->
+
+
+<!-- <ion-modal [isOpen]="isModalOpen" class="view_post_modal" backdropDismiss="false"> 
+  <ng-template>
+    <div class="modal_header">
+      <button class="close_btn" (click)="setOpen(false)">
+        <ion-icon name="close-outline"></ion-icon> 
+      </button>
+    </div>
+    <ion-content class="ion-padding">
+      <img src="../../../../assets/images/features/extranet.jpg" alt="">
+    </ion-content>
+  </ng-template>
+</ion-modal> -->
