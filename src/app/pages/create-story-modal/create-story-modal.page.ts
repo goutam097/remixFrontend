@@ -9,6 +9,8 @@ import { ModalController } from '@ionic/angular';
 export class CreateStoryModalPage implements OnInit {
 
   isModalOpen = false;
+  showColorDiv: boolean = false;
+  showTextDiv: boolean =false;
 
   setOpen(isOpen: boolean) {
     this.isModalOpen = isOpen;
@@ -21,6 +23,16 @@ export class CreateStoryModalPage implements OnInit {
    
   }
 
+
+  showColor() {
+    this.showColorDiv = !this.showColorDiv;
+    this.showTextDiv = false;
+  }
+
+  showText(){
+    this.showTextDiv = !this.showTextDiv;
+    this.showColorDiv = false;
+  }
   
 
   ngOnInit() {
