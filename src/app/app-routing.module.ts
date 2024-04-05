@@ -18,6 +18,14 @@ const routes: Routes = [
     path: 'audo-testing',
     loadChildren: () => import('./pages/audo-testing/audo-testing.module').then( m => m.AudoTestingPageModule)
   },
+  {
+    path: 'sticker-modal',
+    loadChildren: () => import('./pages/sticker-modal/sticker-modal.module').then( m => m.StickerModalPageModule)
+  },
+  {
+    path: 'text-modal',
+    loadChildren: () => import('./pages/text-modal/text-modal.module').then( m => m.TextModalPageModule)
+  },
 
 ];
 
