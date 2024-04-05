@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'create-story-modal',
     loadChildren: () => import('./pages/create-story-modal/create-story-modal.module').then( m => m.CreateStoryModalPageModule)
   },
+  {
+    path: 'audo-testing',
+    loadChildren: () => import('./pages/audo-testing/audo-testing.module').then( m => m.AudoTestingPageModule)
+  },
 
 ];
 
