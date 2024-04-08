@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'text-modal',
     loadChildren: () => import('./pages/text-modal/text-modal.module').then( m => m.TextModalPageModule)
   },
+  {
+    path: 'music-modal',
+    loadChildren: () => import('./pages/music-modal/music-modal.module').then( m => m.MusicModalPageModule)
+  },
 
 ];
 

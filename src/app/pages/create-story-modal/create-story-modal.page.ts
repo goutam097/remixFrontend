@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { StickerModalPage } from '../sticker-modal/sticker-modal.page';
 import { TextModalPage } from '../text-modal/text-modal.page';
+import { MusicModalPage } from '../music-modal/music-modal.page';
 
 @Component({
   selector: 'app-create-story-modal',
@@ -31,6 +32,14 @@ export class CreateStoryModalPage implements OnInit {
   async openTextModal(){
     const modal = await this.modalCtrl.create({
       component: TextModalPage,
+      
+    });
+    return await modal.present()
+  }
+
+  async openMusicModal(){
+    const modal = await this.modalCtrl.create({
+      component: MusicModalPage,
       
     });
     return await modal.present()
