@@ -1,32 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { StickerModalPage } from '../sticker-modal/sticker-modal.page';
-import { TextModalPage } from '../text-modal/text-modal.page';
 
 @Component({
-  selector: 'app-create-story-modal',
-  templateUrl: './create-story-modal.page.html',
-  styleUrls: ['./create-story-modal.page.scss'],
+  selector: 'app-text-modal',
+  templateUrl: './text-modal.page.html',
+  styleUrls: ['./text-modal.page.scss'],
 })
-export class CreateStoryModalPage implements OnInit {
+export class TextModalPage implements OnInit {
+
+
 
   isModalOpen = false;
   showColorDiv: boolean = false;
   showTextDiv: boolean =false;
 
-  setOpen(isOpen: boolean) {
-    this.isModalOpen = isOpen;
-  }
-
   constructor(private modalCtrl: ModalController) {}
-
-  async opeStickernModal(){
-    const modal = await this.modalCtrl.create({
-      component: StickerModalPage,
-      
-    });
-    return await modal.present()
-  }
 
   async openTextModal(){
     const modal = await this.modalCtrl.create({
@@ -41,7 +29,6 @@ export class CreateStoryModalPage implements OnInit {
    
   }
 
-
   showColor() {
     this.showColorDiv = !this.showColorDiv;
     this.showTextDiv = false;
@@ -51,7 +38,6 @@ export class CreateStoryModalPage implements OnInit {
     this.showTextDiv = !this.showTextDiv;
     this.showColorDiv = false;
   }
-  
 
   ngOnInit() {
   }
