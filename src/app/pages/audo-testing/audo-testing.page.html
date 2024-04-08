@@ -5,9 +5,39 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">audo-testing</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- <audio #audioPlayer controls>
+    <source [src]="audioUrl" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <div *ngFor="let snippet of snippets">
+    <button (click)="selectSnippet(snippet.start)">Select {{ snippet.start }} - {{ snippet.start + 30 }} sec</button>
+  </div> -->
+
+
+  <!-- <div class="song-player">
+    <audio controls #audioPlayer>
+      <source src="../../../assets/music/music11.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  
+  <div class="song-controls">
+    <input type="number" [(ngModel)]="startPosition" placeholder="Start time (seconds)">
+    <input type="number" [(ngModel)]="endPosition" placeholder="End time (seconds)">
+    <button (click)="playSegment()">Play Segment</button>
+  </div> -->
+
+  <div class="song-player">
+    <audio controls #audioPlayer>
+      <source src="../../../assets/music/music11.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  
+  <div class="song-controls">
+    <button (click)="playSegment()">Play 30-second Segment</button>
+  </div>
+  
+  
 </ion-content>
