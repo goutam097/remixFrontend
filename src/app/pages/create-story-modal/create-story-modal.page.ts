@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { StickerModalPage } from '../sticker-modal/sticker-modal.page';
 import { TextModalPage } from '../text-modal/text-modal.page';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/service/data/data.service';
 import { AlertService } from 'src/app/service/alert/alert.service';
+// import html2canvas from 'html2canvas';
+// import { Recorder } from 'recordrtc';
+
+
 
 @Component({
   selector: 'app-create-story-modal',
@@ -12,6 +16,8 @@ import { AlertService } from 'src/app/service/alert/alert.service';
   styleUrls: ['./create-story-modal.page.scss'],
 })
 export class CreateStoryModalPage implements OnInit {
+  @ViewChild('storyPost') storyPost: ElementRef | any;
+  
   allowedTypes: any = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp'];
   maxSize: number = 2100000;
 
@@ -253,4 +259,56 @@ export class CreateStoryModalPage implements OnInit {
     document.removeEventListener('mousemove', this.onMouseMove);
     document.removeEventListener('mouseup', this.onMouseUp);
   };
+
+/*   convertToVideo() {
+    const container = this.storyPost.nativeElement;
+  
+    // Get dimensions of the container
+    const width = container.offsetWidth;
+    const height = container.offsetHeight;
+  
+    // Create a canvas element
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const context = canvas.getContext('2d');
+  
+    if (!context) {
+      console.error('Failed to get 2D context from canvas');
+      return;
+    }
+  
+    // Convert HTML content to canvas
+    html2canvas(container).then((htmlCanvas: HTMLCanvasElement) => {
+      context.drawImage(htmlCanvas, 0, 0, width, height);
+      const frames = [canvas.toDataURL('image/jpeg', 1)];
+  
+      // Convert frames to a video
+      const stream = canvas.captureStream();
+      const recorder = new Recorder(stream, {
+        type: 'canvas',
+        frameRate: 30,
+        quality: 10,
+        width: width,
+        height: height
+      });
+  
+      recorder.startRecording();
+      setTimeout(() => {
+        recorder.stopRecording(() => {
+          const videoBlob = recorder.getBlob();
+          this.saveVideo(videoBlob);
+        });
+      }, 30000); // 30 seconds duration
+    });
+  }
+
+  saveVideo(blob: Blob) {
+    // You can save the blob as a video file or perform any other action
+    const videoUrl = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = videoUrl;
+    link.download = 'story_video.mp4';
+    link.click();
+  } */
 }
