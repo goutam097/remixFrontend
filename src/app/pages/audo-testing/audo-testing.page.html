@@ -28,7 +28,7 @@
     <button (click)="playSegment()">Play Segment</button>
   </div> -->
 
-  <div class="song-player">
+  <!-- <div class="song-player">
     <audio controls #audioPlayer>
       <source src="../../../assets/music/music11.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -37,7 +37,35 @@
   
   <div class="song-controls">
     <button (click)="playSegment()">Play 30-second Segment</button>
-  </div>
+  </div> -->
+
+
+
+
+  <!-- Create Sticker Section -->
+  <section class="mt-5 container">
+    <div>
+      <label>Sticker</label>
+      <input type="file" required accept="image/jpg,image/jpeg,image/png"
+      (change)="yourImage($event.target)" />
+    </div>
+    <button class="btn btn-primary" type="button" (click)="createImage()">Submit</button>
+  </section>
+
+  <section class="text-center ms-5 mt-5 container">
+    <table>
+      <tr>
+        <th>Sl. No</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+      <tr *ngFor="let s of stickerList; let i = index">
+        <td>{{i+1}}</td>
+        <td><img style="width: 73px;" src="{{s?.image}}" alt=""></td>
+        <td><button type="button" class="btn btn-danger" (click)="deleteFiles(s?._id)">Delete</button></td>
+      </tr>
+    </table>
+  </section>
   
   
 </ion-content>

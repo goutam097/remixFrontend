@@ -7,6 +7,10 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./text-modal.page.scss'],
 })
 export class TextModalPage implements OnInit {
+  userText :any;
+  textColor: string = 'black'; 
+
+  colors: string[] = ['blue', 'rgb(255, 0, 0)', 'rgb(0, 248, 54)', 'rgb(197, 0, 66)', 'rgb(223, 171, 3)', 'rgb(0, 0, 3)', 'rgb(3, 185, 185)'];
 
 
 
@@ -22,6 +26,18 @@ export class TextModalPage implements OnInit {
       
     });
     return await modal.present()
+  }
+
+  changeTextColor(color: string) {
+    console.log(color)
+    this.textColor = color;
+  }
+
+  getUserText() {
+    this.modalCtrl.dismiss({
+      text: this.userText,
+      textColor: this.textColor
+    });
   }
 
   cancel() {
@@ -41,5 +57,11 @@ export class TextModalPage implements OnInit {
 
   ngOnInit() {
   }
+
+  // getUserText(){
+  //   this.modalCtrl.dismiss({
+  //     text: this.userText
+  //   });
+  // }
 
 }
