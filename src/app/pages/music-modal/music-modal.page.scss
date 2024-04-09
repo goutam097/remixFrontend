@@ -10,3 +10,15 @@
         padding: .7rem .75rem;
     }
 }
+
+.song-list{ display: flex; gap: 10px; margin-bottom: 15px;
+    .song-pic{
+        width: 40px; height: 40px; border-radius: 5px;
+    }
+    p{margin: 0; font-size: 14px; line-height: 14px;}
+    small{color: #9b9b9b; font-size: 12px;}
+    .play-icon{background: #d1d1d1;
+        width: 30px; height: 30px; border-radius: 50%;
+        text-align: center; line-height: 30px; font-size: 12px;
+    }
+}
