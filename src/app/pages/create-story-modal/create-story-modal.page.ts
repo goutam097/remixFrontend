@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { StickerModalPage } from '../sticker-modal/sticker-modal.page';
 import { TextModalPage } from '../text-modal/text-modal.page';
+import { MusicModalPage } from '../music-modal/music-modal.page';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/service/data/data.service';
 import { AlertService } from 'src/app/service/alert/alert.service';
@@ -90,6 +91,14 @@ export class CreateStoryModalPage implements OnInit {
       }
     });
     return await modal.present();
+  }
+
+  async openMusicModal(){
+    const modal = await this.modalCtrl.create({
+      component: MusicModalPage,
+      
+    });
+    return await modal.present()
   }
 
   cancel() {

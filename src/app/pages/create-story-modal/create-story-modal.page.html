@@ -5,7 +5,7 @@
   </button>
 </div>
 <ion-content class="ion-padding">
-  <div class="d-flex gap-2 mb-3">
+  <div class="d-flex gap-2 mb-3 justify-content-center">
     <div class="story-box music-box">
       <div class="icon-box">
         <i class="fa-solid fa-music"></i>
@@ -20,8 +20,9 @@
     </div>
     <div class="story-box text-box">
       <div class="icon-box">
-        <i class="fa-solid fa-font"></i>
+        <i class="fa-regular fa-image"></i>
       </div>
+      Picture
       <input type="file" required accept="image/jpg,image/jpeg,image/png" (change)="yourImage($event.target)" />
     </div>
     <!-- <div class="story-box text-box">
@@ -41,14 +42,13 @@
               <button class="close_btn" (click)="setOpen(false)">
               <ion-icon name="close-outline"></ion-icon> 
             </button>
-
             </div>
-            <div class="story-post">
-              <div class="activities d-flex flex-column gap-3">
+            <div class="story-post h-100">
+              <div class="activities d-flex flex-column jus gap-3">
                 <div class="activities-list" (click)="opeStickernModal()">Sticker <i class="fa-solid fa-face-smile"></i>
                 </div>
                 <div class="activities-list" (click)="openTextModal()">Text <i class="fa-solid fa-font"></i></div>
-                <div class="activities-list">Music <i class="fa-solid fa-music"></i></div>
+                <div class="activities-list" (click)="openMusicModal()">Music <i class="fa-solid fa-music"></i></div>
               </div>
               <!-- <img [src]="getImg" alt="">
             <img [src]="stickerImage" alt=""> -->
@@ -63,12 +63,12 @@
                   (mousedown)="onMouseDown($event, 'text')">{{userText}}</p>
               </div> -->
 
-              <div class="container" #storyPost>
-                <img [src]="getImg" alt="">
-                <img class="justify-content-center" *ngIf="stickerImage" [src]="stickerImage" alt=""
-                  style="width: 50px; height: 50px; position: absolute; left: {{stickerX}}px; top: {{stickerY}}px;"
+              <div class="h-100">
+                <img [src]="getImg" alt="" class="h-100">
+                <img class="justify-content-center h-100" *ngIf="stickerImage" [src]="stickerImage" alt=""
+                  style="width: 50px; height: 50px;  position: absolute; left: {{stickerX}}px; top: {{stickerY}}px;"
                   (mousedown)="onMouseDown($event, 'sticker')">
-                <p *ngIf="userText" style="width: 50px; height: 50px; position: absolute; left: {{textX}}px; top: {{textY}}px; color: {{userTextcolor}}"
+                <p *ngIf="userText" style="width: 90%; height: 50px; font-size: 20px; font-weight: 700; position: absolute; left: {{textX}}px; top: {{textY}}px; color: {{userTextcolor}}"
                   (mousedown)="onMouseDown($event, 'text')">{{userText}}</p>
               </div>
               
